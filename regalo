@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Refugio Eterno - Para Gordi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #050505;
+            color: #f5f5f5;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        .serif-font { font-family: 'Dancing Script', cursive; }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 28px;
+        }
+        .snow-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+        }
+        .nav-btn {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 2px solid transparent;
+            opacity: 0.6;
+        }
+        .nav-btn.active {
+            border-bottom: 2px solid #ef4444;
+            color: #ef4444;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        .hidden-section { display: none; }
+        .heart-beat { animation: heart-beat 1.5s infinite; }
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .fade-in { animation: fadeIn 1s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Estilo para el texto de la carta */
+        .letter-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="snowCanvas" class="snow-container"></canvas>
+
+    <!-- Header -->
+    <header class="relative h-[45vh] flex flex-col items-center justify-center text-center p-6 z-10">
+        <div class="heart-beat text-red-600 text-3xl mb-4">❤</div>
+        <h1 class="text-6xl md:text-8xl serif-font text-white mb-3 drop-shadow-lg">Para Mi Vida</h1>
+        <p class="text-xs tracking-[0.4em] uppercase opacity-50 mb-6">Siempre a tu lado</p>
+        <div class="text-[10px] md:text-xs glass px-6 py-2 tracking-widest" id="contador-tiempo">Cargando nuestra eternidad...</div>
+    </header>
+
+    <!-- Navegación -->
+    <nav class="sticky top-4 z-50 glass mx-4 md:mx-auto max-w-2xl mb-8 flex justify-around p-3 text-xs md:text-sm overflow-hidden">
+        <button onclick="showSection('carta')" id="btn-carta" class="nav-btn active px-3">📖 Mi Verdad</button>
+        <button onclick="showSection('risas')" id="btn-risas" class="nav-btn px-3">😂 Risas</button>
+        <button onclick="showSection('amor')" id="btn-amor" class="nav-btn px-3">💖 Promesas</button>
+        <button onclick="showSection('fotos')" id="btn-fotos" class="nav-btn px-3">📸 Recuerdos</button>
+    </nav>
+
+    <main class="max-w-3xl mx-auto p-4 md:p-6 pb-32 relative z-10">
+        
+        <!-- SECCIÓN: LA CARTA ACTUALIZADA -->
+        <section id="section-carta" class="fade-in space-y-8">
+            <div class="glass p-8 md:p-14 letter-content">
+                <p class="italic opacity-80">Cuando caí en el vacío, la única mano que me levantó fue la tuya. Hoy a tu lado, acompañado, el camino ya es otro. El transitar no es tan profundo, porque entendí que mis caídas fueron culpa de la basura que cargaba dentro, de ese intento de escapar a través del consumo.</p>
+                
+                <p>Pero no quiero esa vida. Eso no es vida, eso es muerte. Y gracias a vos es que hoy lo comprendo y me entiendo un poco más. No me cargo tanto ni escapo a lo que siento, al pasado o a lo que temo, porque a vos te tengo a mi lado y no hay nada que me dé miedo. Si vos vas a mi lado, a lo que sea me enfrento y a cualquier batalla me presento.</p>
+
+                <p class="text-center py-4 serif-font text-3xl text-red-500">"Te elegí desde el primer día..."</p>
+
+                <p>Así empezó nuestra historia. Primero un beso, después amigos, mejores amigos... pero el destino nos terminó juntando. Nos elegimos y desde entonces no nos soltamos más. Yo desde el primer día que te vi te elegí y te amé, más allá de que no estaba con vos o no nos conociéramos mucho.</p>
+                
+                <p>Pasaron muchos años, muchas pruebas, muchas batallas. Y si hoy sigo de pie, es gran parte gracias a vos. Porque siempre estuviste ahí cuando todo se me nublaba, se me oscurecía o no me acordaba lo que valía. Vos siempre me empujaste sin saber cuánto me agrandaba por no hablar o tapar heridas; crecía y alimentaba mi vacío mientras tu carga por no soltarme crecía más cada día.</p>
+
+                <p>Pero sin dudar, sin pedir nada a cambio, no me soltaste jamás. Por eso no dudes que te voy a amar todas y cada una de mis vidas; por vos, una y mil gracias por día no alcanzarían ni aunque viva mil años. Porque te pusiste al frente cuando muchos se alejaron.</p>
+                
+                <div class="border-t border-white/10 pt-8 mt-8">
+                    <p class="font-semibold text-xl text-red-400">Gordi,</p>
+                    <p>Sos el amor eterno de mi vida, mi felicidad y mi alegría. Te agradezco por cuidar y hacerme ver de nuevo mi sonrisa y disfrutar los días. No existirá nadie que pueda ocupar el lugar que tenés en mi alma. Gracias por tanto amor, por tu paciencia, por tu fuerza, por ser mi hogar incluso en los peores días.</p>
+                    <p class="text-right serif-font text-2xl mt-6">Con todo lo que soy.</p>
+                </div>
+
+                <button onclick="reproducirVoz()" class="w-full mt-10 py-4 bg-red-600/10 border border-red-600/20 rounded-2xl text-xs hover:bg-red-600/20 transition-all flex items-center justify-center gap-2">
+                    <span class="text-lg">🔊</span> Escuchar este mensaje con mi voz
+                </button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: RISAS -->
+        <section id="section-risas" class="hidden-section fade-in space-y-6">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl serif-font text-yellow-400">Nuestra alegría</h2>
+                <p class="text-sm opacity-60">Porque reír con vos es mi medicina favorita.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-6">
+                <div class="glass overflow-hidden aspect-video bg-neutral-900 flex items-center justify-center relative">
+                    <video controls class="w-full h-full object-contain">
+                        <source src="video1.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                </div>
+                
+                <div class="glass p-8 text-center">
+                    <p class="italic text-sm mb-6">"Incluso en los días grises, la IA me ayuda a buscar un motivo para verte sonreír."</p>
+                    <button onclick="generarChiste()" class="px-8 py-3 bg-white/5 rounded-full text-xs hover:bg-white/10 border border-white/10 transition">✨ Pedir una sonrisa a la IA</button>
+                    <p id="chiste-ia" class="mt-6 text-sm hidden bg-white/5 p-4 rounded-xl leading-relaxed"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PROMESAS -->
+        <section id="section-amor" class="hidden-section fade-in space-y-6">
+            <div class="glass p-10 border-l-4 border-red-600">
+                <h3 class="text-2xl serif-font mb-6">Mi Promesa Eterna</h3>
+                <p class="mb-6 opacity-80 text-sm">Hay cosas que nunca van a cambiar, pase lo que pase:</p>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3"><span class="text-red-500">✦</span> Jamás te voy a soltar la mano, como vos no lo hiciste conmigo.</li>
+                    <li class="flex items-start gap-3"><span class="text-red-500">✦</span> Mi hogar siempre será donde estés vos.</li>
+                    <li class="flex items-start gap-3"><span class="text-red-500">✦</span> Voy a cuidar de nuestra sonrisa todos los días de mi vida.</li>
+                </ul>
+            </div>
+            <button onclick="generarPromesa()" class="w-full py-5 rounded-3xl text-white font-bold bg-gradient-to-r from-red-900 to-red-700 shadow-2xl transform active:scale-95 transition">✨ Nueva promesa desde mi alma</button>
+            <div id="promesa-container" class="glass p-8 text-center italic text-sm hidden border border-red-500/20"></div>
+        </section>
+
+        <!-- SECCIÓN: FOTOS -->
+        <section id="section-fotos" class="hidden-section fade-in">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="77044a48-d0da-4e9d-be47-22e4936e5dad.jpg" class="rounded-2xl h-48 w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-lg" onerror="this.src='https://via.placeholder.com/300x400?text=Nuestro+Momento'">
+                <img src="916E07D7-E30F-487E-8144-94C502CF5882.jpg" class="rounded-2xl h-48 w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-lg" onerror="this.src='https://via.placeholder.com/300x400?text=Nuestro+Momento'">
+                <img src="A5A89999-0805-4BE8-821C-898F809A8DE3.jpg" class="rounded-2xl h-48 w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-lg" onerror="this.src='https://via.placeholder.com/300x400?text=Nuestro+Momento'">
+                <img src="FB_IMG_1690786572084.jpg" class="rounded-2xl h-48 w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-lg" onerror="this.src='https://via.placeholder.com/300x400?text=Nuestro+Momento'">
+                <img src="B2697090-6DE8-42CB-A48F-46BBDC91C338.png" class="rounded-2xl h-48 w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-lg" onerror="this.src='https://via.placeholder.com/300x400?text=Nuestro+Momento'">
+                <img src="image.png" class="rounded-2xl h-48 w-full object-cover grayscale hover:grayscale-0 transition-all duration-700 cursor-pointer shadow-lg" onerror="this.src='https://via.placeholder.com/300x400?text=Nuestro+Momento'">
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const apiKey = ""; 
+
+        function showSection(id) {
+            document.querySelectorAll('main section').forEach(s => s.classList.add('hidden-section'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('section-' + id).classList.remove('hidden-section');
+            document.getElementById('btn-' + id).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function actualizarContador() {
+            const inicio = new Date('2010-01-01'); // Ajusta aquí la fecha real de vuestro inicio
+            const ahora = new Date();
+            const diff = ahora - inicio;
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('contador-tiempo').innerText = `${dias.toLocaleString()} DÍAS ELIGIÉNDOTE`;
+        }
+        actualizarContador();
+
+        async function generarChiste() {
+            const container = document.getElementById('chiste-ia');
+            container.innerText = "Buscando algo tierno...";
+            container.classList.remove('hidden');
+            
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: "Escribe un pensamiento corto, muy tierno y con un toque de humor sobre una pareja que ha superado todo junta después de 15 años. Algo para alegrar a una mujer llamada Gordi." }] }]
+                    })
+                });
+                const data = await response.json();
+                container.innerText = data.candidates[0].content.parts[0].text;
+            } catch (e) { container.innerText = "Te amo tanto que la tecnología no puede explicarlo. Dame un abrazo."; }
+        }
+
+        async function generarPromesa() {
+            const container = document.getElementById('promesa-container');
+            container.innerText = "Escuchando a mi corazón...";
+            container.classList.remove('hidden');
+            
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: "Escribe una promesa de amor profundo, superación y seguridad. El hombre le habla a su mujer que lo salvó del vacío y la adicción. Tono argentino, muy íntimo, de alguien que ahora es feliz y está agradecido." }] }]
+                    })
+                });
+                const data = await response.json();
+                container.innerText = data.candidates[0].content.parts[0].text;
+            } catch (e) { container.innerText = "Mi promesa es estar siempre para vos, como vos estuviste para mí."; }
+        }
+
+        async function reproducirVoz() {
+            const texto = "Gordi, gracias por ser mi hogar incluso en los peores días. Sos el amor eterno de mi vida, mi felicidad y mi alegría. No dudes nunca que te voy a amar todas y cada una de mis vidas. Gracias por no soltarme jamás.";
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: `Lee esto con voz pausada, muy profunda y llena de amor: ${texto}` }] }],
+                        generationConfig: {
+                            responseModalities: ["AUDIO"],
+                            speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } } }
+                        }
+                    })
+                });
+                const result = await response.json();
+                const audioData = result.candidates[0].content.parts[0].inlineData.data;
+                const audioBlob = pcmToWav(audioData, 24000); 
+                new Audio(URL.createObjectURL(audioBlob)).play();
+            } catch (error) { console.error("Error TTS"); }
+        }
+
+        function pcmToWav(base64Data, sampleRate) {
+            const byteCharacters = atob(base64Data);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) byteNumbers[i] = byteCharacters.charCodeAt(i);
+            const buffer = new Uint8Array(byteNumbers).buffer;
+            const wavBuffer = new ArrayBuffer(44 + buffer.byteLength);
+            const wavView = new DataView(wavBuffer);
+            const writeString = (view, offset, string) => {
+                for (let i = 0; i < string.length; i++) view.setUint8(offset + i, string.charCodeAt(i));
+            };
+            writeString(wavView, 0, 'RIFF');
+            wavView.setUint32(4, 36 + buffer.byteLength, true);
+            writeString(wavView, 8, 'WAVE');
+            writeString(wavView, 12, 'fmt ');
+            wavView.setUint32(16, 16, true);
+            wavView.setUint16(20, 1, true);
+            wavView.setUint16(22, 1, true);
+            wavView.setUint32(24, sampleRate, true);
+            wavView.setUint32(28, sampleRate * 2, true);
+            wavView.setUint16(32, 2, true);
+            wavView.setUint16(34, 16, true);
+            writeString(wavView, 36, 'data');
+            wavView.setUint32(40, buffer.byteLength, true);
+            const view = new DataView(buffer);
+            for (let i = 0; i < buffer.byteLength; i++) wavView.setUint8(44 + i, view.getUint8(i));
+            return new Blob([wavBuffer], { type: 'audio/wav' });
+        }
+
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, snowflakes;
+        function initSnow() {
+            width = window.innerWidth; height = window.innerHeight;
+            canvas.width = width; canvas.height = height;
+            snowflakes = Array.from({length: 100}, () => ({ 
+                x: Math.random() * width, 
+                y: Math.random() * height, 
+                r: Math.random() * 2 + 0.5, 
+                d: Math.random() * 0.3 + 0.2,
+                o: Math.random() * 0.5 + 0.2
+            }));
+        }
+        function drawSnow() {
+            ctx.clearRect(0, 0, width, height);
+            snowflakes.forEach(f => {
+                ctx.fillStyle = `rgba(255, 255, 255, ${f.o})`;
+                ctx.beginPath();
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+                ctx.fill();
+                f.y += f.d;
+                if (f.y > height) f.y = -10;
+            });
+            requestAnimationFrame(drawSnow);
+        }
+        initSnow(); drawSnow();
+        window.addEventListener('resize', initSnow);
+    </script>
+</body>
+</html>
